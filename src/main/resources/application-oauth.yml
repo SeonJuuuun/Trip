@@ -1,0 +1,27 @@
+spring:
+  security:
+    oauth2.client:
+      registration:
+        # 구글
+        google:
+          client-id: 93298474627-dojmcfno0lu4ifnts324s64n8pmm1m9p.apps.googleusercontent.com
+          client-secret: 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
+          redirect-uri: http://localhost:8080/login/oauth2/code/google
+          scope: profile, email
+        # 네이버
+        naver:
+          client-id: UtCpuoX0wP5hf0N1qhsV
+          client-secret: FsfDX_SMfV
+          redirect-uri: http://localhost:8080/login/oauth2/code/naver
+          authorization-grant-type: authorization_code
+          scope: name,email,profile_image
+          client-name: Naver
+          provider: naver
+
+      provider:
+
+        naver:
+          authorizationUri: https://nid.naver.com/oauth2.0/authorize
+          tokenUri: https://nid.naver.com/oauth2.0/token
+          userInfoUri: https://openapi.naver.com/v1/nid/me
+          userNameAttribute: response
