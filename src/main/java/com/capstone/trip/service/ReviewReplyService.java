@@ -20,11 +20,11 @@ public class ReviewReplyService {
 
 	@Transactional
 	public void reviewReplySave(Long reviewId, ReviewReply reviewReply, User user) {
-		Review review = reviewRepository.findById(reviewId).orElseThrow(() -> new IllegalArgumentException("해당 reviewId가 없습니다. id=" + reviewId));
+		Review review = reviewRepository.findById(reviewId)
+			.orElseThrow(() -> new IllegalArgumentException("해당 reviewId가 없습니다. id=" + reviewId));
 		reviewReply.save(review, user);
 		reviewReplyRepository.save(reviewReply);
 	}
-
 
 	@Transactional
 	public void reviewReplyDelete(Long reviewReplyId) {

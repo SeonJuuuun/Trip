@@ -20,11 +20,11 @@ public class ReplyService {
 
 	@Transactional
 	public void replySave(Long boardId, Reply reply, User user) {
-		Board board = boardRepository.findById(boardId).orElseThrow(() -> new IllegalArgumentException("해당 boardId가 없습니다. id=" + boardId));
+		Board board = boardRepository.findById(boardId)
+			.orElseThrow(() -> new IllegalArgumentException("해당 boardId가 없습니다. id=" + boardId));
 		reply.save(board, user);
 		replyRepository.save(reply);
 	}
-
 
 	@Transactional
 	public void replyDelete(Long replyId) {
