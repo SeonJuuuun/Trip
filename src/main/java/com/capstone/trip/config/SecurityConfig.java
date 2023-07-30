@@ -30,7 +30,7 @@ public class SecurityConfig {
 
 	@Bean
 	AuthenticationManager authenticationManager(AuthenticationConfiguration authenticationConfiguration)
-		throws Exception{
+		throws Exception {
 		return authenticationConfiguration.getAuthenticationManager();
 	}
 
@@ -52,7 +52,7 @@ public class SecurityConfig {
 			.and()
 			.oauth2Login()
 			.loginPage("/auth/user/login")
-			.defaultSuccessUrl("/")			// 로그인 성공하면 "/" 으로 이동
+			.defaultSuccessUrl("/")            // 로그인 성공하면 "/" 으로 이동
 			.userInfoEndpoint()
 			.userService(principalOauth2UserService);
 
@@ -65,6 +65,5 @@ public class SecurityConfig {
 	public WebSecurityCustomizer webSecurityCustomizer() {
 		return (web) -> web.ignoring().requestMatchers("/images/**", "/js/**", "/webjars/**");
 	}
-
 
 }

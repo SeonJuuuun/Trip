@@ -31,5 +31,4 @@ public class ReplyApiController {
 		replyService.replyDelete(replyId);
 	}
 
-
 }

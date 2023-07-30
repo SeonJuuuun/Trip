@@ -1,7 +1,5 @@
 package com.capstone.trip.domain.user;
 
-
-
 import com.capstone.trip.domain.BaseTimeEntity;
 
 import jakarta.persistence.Column;
@@ -15,8 +13,6 @@ import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
-
-
 
 @Getter
 @Builder

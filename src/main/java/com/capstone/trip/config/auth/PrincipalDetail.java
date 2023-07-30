@@ -34,7 +34,6 @@ public class PrincipalDetail implements UserDetails, OAuth2User {
 		this.user = user;
 	}
 
-
 	@Override
 	public Collection<? extends GrantedAuthority> getAuthorities() {
 		Collection<GrantedAuthority> collection = new ArrayList<>();

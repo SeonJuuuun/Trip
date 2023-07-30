@@ -1,14 +1,17 @@
 package com.capstone.trip.controller.api;
 
-import lombok.RequiredArgsConstructor;
-
 import org.springframework.security.core.annotation.AuthenticationPrincipal;
-import org.springframework.web.bind.annotation.*;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RestController;
 
 import com.capstone.trip.config.auth.PrincipalDetail;
 import com.capstone.trip.domain.user.User;
 import com.capstone.trip.dto.user.UserSaveRequestDto;
 import com.capstone.trip.service.UserService;
+
+import lombok.RequiredArgsConstructor;
 
 @RequiredArgsConstructor
 @RestController

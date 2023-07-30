@@ -38,7 +38,6 @@ public class ReviewReply extends BaseTimeEntity {
 	@JoinColumn(name = "userId")
 	private User user;
 
-
 	public void save(Review review, User user) {
 		this.review = review;
 		this.user = user;
