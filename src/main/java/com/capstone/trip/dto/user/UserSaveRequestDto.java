@@ -18,6 +18,8 @@ public class UserSaveRequestDto {
 	private String password;
 	private String email;
 	private String nickname;
+	private String gender;
+	private String date;
 	private Role role;
 
 	public User toEntity() {
@@ -26,6 +28,8 @@ public class UserSaveRequestDto {
 			.password(password)
 			.email(email)
 			.nickname(nickname)
+			.gender(gender)
+			.date(date)
 			.role(Role.USER)
 			.build();
 	}

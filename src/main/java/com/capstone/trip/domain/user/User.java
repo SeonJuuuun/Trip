@@ -47,6 +47,12 @@ public class User extends BaseTimeEntity {
 	@Column
 	private String providerId;
 
+	@Column
+	private String gender;
+
+	@Column
+	private String date;
+
 	/**
 	 * 비밀번호 암호화 메소드
 	 */
