@@ -25,7 +25,9 @@ let index = {
             username: $("#username").val(),
             password: $("#password").val(),
             email: $("#email").val(),
-            nickname: $("#nickname").val()
+            nickname: $("#nickname").val(),
+            gender: $("#gender").val(),
+            date: $("#date").val()
         }
 
         $.ajax({
