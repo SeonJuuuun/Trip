@@ -19,15 +19,12 @@ public class AccompanyService {
 	private final BoardRepository boardRepository;
 
 	@Transactional
-	public void accompanySave(Long boardId, Accompany accompany, User user) {
-		Board board = boardRepository.findById(boardId).orElseThrow(() -> new IllegalArgumentException("해당 boardId가 없습니다. id=" + boardId));
+	public void accompanySave(Long boardId, String username, String nickname, User user) {
+		Board board = boardRepository.findById(boardId)
+			.orElseThrow(() -> new IllegalArgumentException("해당 boardId가 없습니다. id=" + boardId));
+		Accompany accompany = new Accompany();
 		accompany.save(board, user);
 		accompanyRepository.save(accompany);
 	}
 
-
-   /* @Transactional
-    public void replyDelete(Long replyId) {
-        replyRepository.deleteById(replyId);
-    }*/
 }
