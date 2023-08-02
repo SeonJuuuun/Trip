@@ -35,27 +35,6 @@ public class Accompany extends BaseTimeEntity {
 	@JoinColumn(name = "boardId")
 	private Board board;
 
-
-	private boolean accepted;
-
-	private boolean attended;
-
-	public void accept() {
-		this.accepted = true;
-	}
-
-	public void reject() {
-		this.accepted = false;
-	}
-	// 생략
-	public void attend() {
-		this.attended = true;
-	}
-
-	public void absent() {
-		this.attended = false;
-	}
-
 	public void save(Board board, User user) {
 		this.board = board;
 		this.user = user;

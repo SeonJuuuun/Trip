@@ -15,6 +15,7 @@
                 <input type="text" class="form-control" id="username" placeholder="아이디를 입력하세요." required
                        minlength="4" size="20">
                 <label for="username">아이디</label>
+                <button id="btn-username">중복검사</button>
                 <div class="valid-feedback">
                     good!
                 </div>
@@ -37,6 +38,7 @@
             <div class="form-floating m-3">
                 <input type="email" class="form-control" id="email" placeholder="이메일을 입력하세요." required>
                 <label for="email">이메일</label>
+                <button id="btn-email">중복검사</button>
                 <div class="valid-feedback">
                     nice!
                 </div>
@@ -48,6 +50,7 @@
                 <input type="text" class="form-control" id="nickname" placeholder="닉네임을 입력하세요." required
                        minlength="4" size="20">
                 <label for="nickname">닉네임</label>
+                <button id="btn-nickname">중복검사</button>
                 <div class="valid-feedback">
                     very nice!
                 </div>
@@ -55,6 +58,23 @@
                     닉네임은 4자 이상 입력해야 합니다.
                 </div>
             </div>
+
+            <div class="search_boxes">
+                <div class="form-floating m-3">
+                    성별
+                    <select name="gender" id="gender">
+                        <option value>성별 선택</option>
+                        <option value="남성">남성</option>
+                        <option value="여성">여성</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="form-floating m-3">
+                생년월일
+                <input type="date" id="date" class="form-control" name="userBirthday">
+            </div>
+
         </form>
         <button class="w-100 btn btn-lg btn-success" id="btn-save">회원가입</button>
     </div>
