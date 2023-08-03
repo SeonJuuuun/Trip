@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en" class="h-100" xmlns:th="http://www.thymeleaf.org">
+<html lang="en" class="h-100" xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.w3.org/1999/xhtml">
 
 <head
         th:replace="~{layout/header :: head ('마이페이지')}">
@@ -27,6 +27,9 @@
                 <li>
                     <a href="/request/main" target="ifPage1">동행 신청 목록</a>
                     <br>
+                </li>
+                <li>
+                    <a sec:authorize="isAuthenticated()" href="/logout">로그아웃</a>
                 </li>
             </ul>
         </nav>
