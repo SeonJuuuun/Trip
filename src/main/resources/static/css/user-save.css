@@ -48,7 +48,7 @@ body {
 
 .myPage-click .myPage-1 {
     position: sticky;
-    float: right;
+    float: left;
     top: 80px;
     box-sizing: border-box;
     border-radius: 10px;
