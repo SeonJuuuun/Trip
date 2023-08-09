@@ -37,7 +37,7 @@ public class myPageController {
 		return "layout/user/myPage/myPage-myPost";
 	}
 
-	@GetMapping("/user/mypage/request")
-	public String request() { return "layout/user/mypage/mypage-request"; }
+	// @GetMapping("/user/mypage/request")
+	// public String request() { return "layout/user/mypage/mypage-request"; }
 
 }
