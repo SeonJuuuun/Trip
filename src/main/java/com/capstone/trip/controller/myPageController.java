@@ -7,6 +7,7 @@ import org.springframework.data.domain.Sort;
 import org.springframework.data.web.PageableDefault;
 import org.springframework.security.core.annotation.AuthenticationPrincipal;
 import org.springframework.stereotype.Controller;
+import org.springframework.stereotype.Service;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 
@@ -35,4 +36,8 @@ public class myPageController {
 		model.addAttribute("boards", boards);
 		return "layout/user/myPage/myPage-myPost";
 	}
+
+	// @GetMapping("/user/mypage/request")
+	// public String request() { return "layout/user/mypage/mypage-request"; }
+
 }

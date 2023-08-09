@@ -2,6 +2,7 @@ package com.capstone.trip.service;
 
 import org.springframework.security.core.annotation.AuthenticationPrincipal;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
+import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -11,8 +12,10 @@ import com.capstone.trip.domain.user.UserRepository;
 
 import lombok.RequiredArgsConstructor;
 
+@Component
 @RequiredArgsConstructor
 @Service
+
 public class UserService {
 
 	private final UserRepository userRepository;
@@ -42,9 +45,22 @@ public class UserService {
 
 	@Transactional(readOnly = true)
 	public User findUser(String username) {
-		User user = userRepository.findByUsername(username).orElseGet(() -> {
-			return new User();
-		});
+		User user = userRepository.findByUsername(username).orElseGet(User::new);
 		return user;
+	}
+
+	@Transactional
+	public boolean checkUsernameDuplicate(String username) {
+		return userRepository.existsByUsername(username);
+	}
+
+	@Transactional
+	public boolean checkEmailDuplicate(String email) {
+		return userRepository.existsByEmail(email);
+	}
+
+	@Transactional
+	public boolean checkNicknameDuplicate(String nickname) {
+		return userRepository.existsByNickname(nickname);
 	}
 }

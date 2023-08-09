@@ -42,6 +42,9 @@ public class SecurityConfig {
 			.and()
 			.cors().and().csrf().disable()
 			.authorizeHttpRequests()
+			.requestMatchers("/user/username/exists").permitAll() // 허용할 경로 설정
+			.requestMatchers("/user/email/exists").permitAll() // 허용할 경로 설정
+			.requestMatchers("/user/nickname/exists").permitAll() // 허용할 경로 설정
 			.requestMatchers("/", "/auth/**", "/js/**", "/css/**", "/image/**").permitAll()
 			.anyRequest().authenticated()
 			.and()
