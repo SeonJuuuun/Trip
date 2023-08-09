@@ -1,5 +1,6 @@
 package com.capstone.trip.config.auth;
 
+import java.io.Serial;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Map;
@@ -16,6 +17,7 @@ import lombok.Getter;
 public class PrincipalDetail implements UserDetails, OAuth2User {
 
 	private User user;
+	@Serial
 	private static final long serialVersionUID = 1L;
 	private Map<String, Object> attributes;
 
