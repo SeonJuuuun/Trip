@@ -1,5 +1,6 @@
 package com.capstone.trip.service;
 
+import com.capstone.trip.domain.board.Board;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
@@ -51,6 +52,11 @@ public class ReviewService {
 	@Transactional
 	public int updateCount(Long id) {
 		return reviewRepository.updateCount(id);
+	}
+
+	@Transactional
+	public Page<Review> findByUser_Id(Long userId, Pageable pageable) {
+		return reviewRepository.findByUser_Id(userId, pageable);
 	}
 
 }

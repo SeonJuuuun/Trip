@@ -9,7 +9,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
-import com.capstone.trip.domain.accompany.Accompany;
+//import com.capstone.trip.domain.accompany.Accompany;
 import com.capstone.trip.domain.board.Board;
 import com.capstone.trip.domain.review.Review;
 import com.capstone.trip.service.AccompanyService;
@@ -52,12 +52,12 @@ public class IndexController {
 		return "/layout/review/review-main";
 	}
 
-	@GetMapping("/user/mypage/request")
-	public String accompanyIndex(Model model, @RequestParam(value = "boardId") Long boardId) {
-		System.out.println("basdfasdfasdf" + boardId);    // 문제
-		Accompany accompany = accompanyService.findByBoard_Id(boardId);
-		model.addAttribute("accompany", accompany);
-		return "layout/user/mypage/mypage-request";
-	}
+//	@GetMapping("/user/mypage/request")
+//	public String accompanyIndex(Model model, @RequestParam(value = "boardId") Long boardId) {
+//		System.out.println("basdfasdfasdf" + boardId);    // 문제
+//		Accompany accompany = accompanyService.findByBoard_Id(boardId);
+//		model.addAttribute("accompany", accompany);
+//		return "layout/user/mypage/mypage-request";
+//	}
 
 }
