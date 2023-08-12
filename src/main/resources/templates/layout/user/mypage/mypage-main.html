@@ -10,22 +10,25 @@
 
 <h1>마이페이지</h1>
 <main class="myPage-click">
-    <div class="myPage">
+    <span class="myPage">
         <nav>
             <ul class="myPage-1">
+                    <a href="/user/information" target="ifPage1"><button>내 정보</button></a>
+                    <a href="/user/update" target="ifPage1"><button>정보 수정</button></a>
+                    <a href="/user/mypage/mypost" target="ifPage1"><button>내가 쓴 동행글</button></a>
+                    <a href="/user/mypage/request" target="ifPage1"><button>동행 신청 목록</button></a>
+                    <a sec:authorize="isAuthenticated()" href="/logout"><button>로그아웃</button></a>
+            </ul>
+        </nav>
+        <iframe src="/user/update" width="500" height="700" name="ifPage1"></iframe>
+    </span>
                 <li>
                     <a href="/user/information" target="ifPage1">내 정보</a>
                 </li>
                 <li>
-                    <a href="/user/update" target="ifPage1">정보 수정</a>
                     <br>
                 </li>
                 <li>
-                    <a href="/user/mypage/mypost" target="ifPage1">내가 쓴 동행글</a>
-                    <br>
-                </li>
-                <li>
-                    <a href="/user/mypage/request" target="ifPage1">동행 신청 목록</a>
                     <br>
                 </li>
                 <li>
@@ -33,7 +36,7 @@
                 </li>
             </ul>
         </nav>
-        <iframe src="/user/update" width="900" height="700" name="ifPage1"></iframe>
+        <iframe src="/user/information" width="900" height="700" name="ifPage1"></iframe>
     </div>
 </main>
 
@@ -46,6 +49,8 @@
         integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
         crossorigin="anonymous"></script>
 <script th:src="@{/js/user.js}"></script>
+<script th:src="@{/js/accompany.js}"></script>
+
 </body>
 
 </html>

@@ -78,7 +78,7 @@ public class PrincipalOauth2UserService extends DefaultOAuth2UserService {
 				.username(username)
 				.password(password)
 				.email(email)
-				.nickname("소셜로그인")
+				.nickname(email)
 				.role(role)
 				.provider(provider)
 				.providerId(providerId)

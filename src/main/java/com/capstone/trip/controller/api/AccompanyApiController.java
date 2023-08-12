@@ -1,14 +1,13 @@
 package com.capstone.trip.controller.api;
 
-import java.util.Map;
-
 import org.springframework.security.core.annotation.AuthenticationPrincipal;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.capstone.trip.config.auth.PrincipalDetail;
+import com.capstone.trip.dto.accompany.AccompanySaveRequestDto;
 import com.capstone.trip.service.AccompanyService;
 
 import lombok.RequiredArgsConstructor;
@@ -19,13 +18,16 @@ public class AccompanyApiController {
 
 	private final AccompanyService accompanyService;
 
-	@PostMapping("/applyToAccompany/{boardId}")
-	public void save(@PathVariable("boardId") Long boardId,
-		@RequestBody Map<String, String> data,
+	@PostMapping("/apply/accompany")
+	@ResponseBody
+	public void save(@RequestBody AccompanySaveRequestDto accompanySaveRequestDto,
 		@AuthenticationPrincipal PrincipalDetail principalDetail) {
-		String username = data.get("username");
-		String nickname = data.get("nickname");
-		accompanyService.accompanySave(boardId, username, nickname, principalDetail.getUser());
+		Long userId = accompanySaveRequestDto.getUserId();
+		Long boardId = accompanySaveRequestDto.getBoardId();
+		String username = accompanySaveRequestDto.getUsername();
+		String nickname = accompanySaveRequestDto.getNickname();
+		String title = accompanySaveRequestDto.getTitle();
+		accompanyService.save(userId, boardId, username, nickname, title, principalDetail.getUser());
 	}
 
 }
