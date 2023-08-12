@@ -24,7 +24,6 @@ public class IndexController {
 
 	private final BoardService boardService;
 	private final ReviewService reviewService;
-	private final AccompanyService accompanyService;
 
 	@GetMapping("/")
 	public String index(Model model,
@@ -52,12 +51,5 @@ public class IndexController {
 		return "/layout/review/review-main";
 	}
 
-//	@GetMapping("/user/mypage/request")
-//	public String accompanyIndex(Model model, @RequestParam(value = "boardId") Long boardId) {
-//		System.out.println("basdfasdfasdf" + boardId);    // 문제
-//		Accompany accompany = accompanyService.findByBoard_Id(boardId);
-//		model.addAttribute("accompany", accompany);
-//		return "layout/user/mypage/mypage-request";
-//	}
 
 }
