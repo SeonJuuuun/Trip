@@ -14,9 +14,31 @@ body {
 .myPage-click .myPage-1 {
     position: sticky;
     float: left;
-    top: 80px;
-    box-sizing: content-box;
-    border-radius: 10px;
+    box-sizing: border-box;
     box-shadow: rgba(0,0,0,0.16) 0px 0px 4px;
+    width: 160px;
+    padding-left: 0px;
+
+}
+.myPage-1 button {
+    background-color: white;
+    width: 160px;
+    height: 60px;
+    border-color: #d3d3d3;
+    text-align: left;
+
+}
+nav {
+    display: inline-block;
+}
+
+span > iframe {
+    display: inline-block;
+    border-color: #d3d3d3;
+    margin: 10px;
+
+}
+
+=======
     width: 170px;
 }
