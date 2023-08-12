@@ -16,4 +16,7 @@ public interface ReviewRepository extends JpaRepository<Review, Long> {
 
 	Page<Review> findByTitleContainingOrContentContaining(
 		@Param("title") String title, @Param("content") String content, Pageable pageable);
+
+	Page<Review> findByUser_Id(
+			@Param(value = "userId") Long userId, Pageable pageable);
 }

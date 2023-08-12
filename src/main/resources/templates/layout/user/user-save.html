@@ -3,84 +3,81 @@
 
 <head th:replace="layout/header :: head ('회원가입')"></head>
 
-<body class="text-center d-flex flex-column h-100">
+<body class="save-body">
 <header th:replace="layout/header :: header"></header>
+<div>
+    <form id="needs-validation" novalidate>
+        <h1 class="h3 m-3 fw-normal">회원가입</h1>
 
-<main class="form-signin">
-    <div class="container border rounded flex-md-row mb-4 shadow-sm h-md-250">
-        <form id="needs-validation" novalidate>
-            <h1 class="h3 m-3 fw-normal">회원가입</h1>
+        <div class="int-area" id="info-id">
+            <input type="text" id="username" required>
+            <label for="username">아이디</label>
+            <button id="btn-username">중복검사</button>
+            <div class="valid-feedback">
+                good!
+            </div>
+            <div class="invalid-feedback">
+                아이디는 4자 이상 입력해야 합니다.
+            </div>
+        </div>
 
+        <div class="int-area">
+            <input type="password" id="password" required>
+            <label for="password">비밀번호</label>
+            <div class="valid-feedback">
+                very good!
+            </div>
+            <div class="invalid-feedback">
+                패스워드는 8자 이상 입력해야 합니다.
+            </div>
+        </div>
+        <div class="int-area" id="info-id2">
+            <input type="email" id="email" required>
+            <label for="email">이메일</label>
+            <button id="btn-email">중복검사</button>
+            <div class="valid-feedback">
+                nice!
+            </div>
+            <div class="invalid-feedback">
+                이메일 형식으로 입력해야 합니다.
+            </div>
+        </div>
+        <div class="int-area" id="info-id3">
+            <input type="text" id="nickname" required>
+            <label for="nickname">닉네임</label>
+            <button id="btn-nickname">중복검사</button>
+            <div class="valid-feedback">
+                very nice!
+            </div>
+            <div class="invalid-feedback">
+                닉네임은 4자 이상 입력해야 합니다.
+            </div>
+        </div>
+
+        <div class="search_boxes">
             <div class="form-floating m-3">
-                <input type="text" class="form-control" id="username" placeholder="아이디를 입력하세요." required
-                       minlength="4" size="20">
-                <label for="username">아이디</label>
-                <button id="btn-username">중복검사</button>
-                <div class="valid-feedback">
-                    good!
-                </div>
-                <div class="invalid-feedback">
-                    아이디는 4자 이상 입력해야 합니다.
-                </div>
+                성별
+                <select name="gender" id="gender">
+                    <option value>성별 선택</option>
+                    <option value="남성">남성</option>
+                    <option value="여성">여성</option>
+                </select>
             </div>
+        </div>
 
-            <div class="form-floating m-3">
-                <input type="password" class="form-control" id="password" placeholder="패스워드를 입력하세요." required
-                       minlength="8" size="20">
-                <label for="password">비밀번호</label>
-                <div class="valid-feedback">
-                    very good!
-                </div>
-                <div class="invalid-feedback">
-                    패스워드는 8자 이상 입력해야 합니다.
-                </div>
-            </div>
-            <div class="form-floating m-3">
-                <input type="email" class="form-control" id="email" placeholder="이메일을 입력하세요." required>
-                <label for="email">이메일</label>
-                <button id="btn-email">중복검사</button>
-                <div class="valid-feedback">
-                    nice!
-                </div>
-                <div class="invalid-feedback">
-                    이메일 형식으로 입력해야 합니다.
-                </div>
-            </div>
-            <div class="form-floating m-3">
-                <input type="text" class="form-control" id="nickname" placeholder="닉네임을 입력하세요." required
-                       minlength="4" size="20">
-                <label for="nickname">닉네임</label>
-                <button id="btn-nickname">중복검사</button>
-                <div class="valid-feedback">
-                    very nice!
-                </div>
-                <div class="invalid-feedback">
-                    닉네임은 4자 이상 입력해야 합니다.
-                </div>
-            </div>
+        <div class="form-floating m-3">
+            생년월일
+            <input type="date" id="date" name="userBirthday">
+        </div>
 
-            <div class="search_boxes">
-                <div class="form-floating m-3">
-                    성별
-                    <select name="gender" id="gender">
-                        <option value>성별 선택</option>
-                        <option value="남성">남성</option>
-                        <option value="여성">여성</option>
-                    </select>
-                </div>
-            </div>
-
-            <div class="form-floating m-3">
-                생년월일
-                <input type="date" id="date" class="form-control" name="userBirthday">
-            </div>
-
-        </form>
-        <button class="w-100 btn btn-lg btn-success" id="btn-save">회원가입</button>
+    </form>
+    <div class="btn-area">
+        <button id="btn-save">회원가입</button>
     </div>
-</main>
+</div>
 
-<footer th:replace="layout/footer :: footer"></footer>
+<!--푸터바 가운데 정렬 아직 미해결 그래서 잠시 빼놓음-->
+<!--<footer th:replace="layout/footer :: footer"></footer>-->
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
 <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
