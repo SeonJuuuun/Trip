@@ -9,11 +9,8 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
-
-import com.capstone.trip.domain.Accompany.Accompany;
 import com.capstone.trip.domain.board.Board;
 import com.capstone.trip.domain.review.Review;
-import com.capstone.trip.service.AccompanyService;
 import com.capstone.trip.service.BoardService;
 import com.capstone.trip.service.ReviewService;
 

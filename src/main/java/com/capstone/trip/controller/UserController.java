@@ -62,3 +62,4 @@ public class UserController {
 	public String myPage() {
 		return "layout/user/myPage/myPage-main";
 	}
+}
