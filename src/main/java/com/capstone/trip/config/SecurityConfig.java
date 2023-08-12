@@ -42,6 +42,12 @@ public class SecurityConfig {
 			.and()
 			.cors().and().csrf().disable()
 			.authorizeHttpRequests()
+			.requestMatchers("/ws/chat/**").permitAll()
+			.requestMatchers("/chat/**").permitAll()
+			.requestMatchers("ws://localhost:8080/ws/chat").permitAll()
+			.requestMatchers("/user/username/exists").permitAll() // 허용할 경로 설정
+			.requestMatchers("/user/email/exists").permitAll() // 허용할 경로 설정
+			.requestMatchers("/user/nickname/exists").permitAll() // 허용할 경로 설정
 			.requestMatchers("/", "/auth/**", "/js/**", "/css/**", "/image/**").permitAll()
 			.anyRequest().authenticated()
 			.and()
