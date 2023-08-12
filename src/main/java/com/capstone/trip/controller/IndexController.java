@@ -9,6 +9,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
+
 import com.capstone.trip.domain.Accompany.Accompany;
 import com.capstone.trip.domain.board.Board;
 import com.capstone.trip.domain.review.Review;
@@ -24,7 +25,6 @@ public class IndexController {
 
 	private final BoardService boardService;
 	private final ReviewService reviewService;
-	private final AccompanyService accompanyService;
 
 	@GetMapping("/")
 	public String index(Model model,
@@ -52,6 +52,7 @@ public class IndexController {
 		return "/layout/review/review-main";
 	}
 
+
 	/*@GetMapping("/user/mypage/request")
 	public String accompanyIndex(Model model, @RequestParam(value = "boardId") Long boardId) {
 		System.out.println("basdfasdfasdf" + boardId);    // 문제
@@ -59,5 +60,6 @@ public class IndexController {
 		model.addAttribute("accompany", accompany);
 		return "layout/user/mypage/mypage-request";
 	}*/
+
 
 }
