@@ -46,13 +46,4 @@ body {
     color: green;
 }
 
-.myPage-click .myPage-1 {
-    position: sticky;
-    float: left;
-    top: 80px;
-    box-sizing: border-box;
-    border-radius: 10px;
-    box-shadow: rgba(0,0,0,0.16) 0px 0px 4px;
-    width: 170px;
 
-}
