@@ -1,7 +1,5 @@
 package com.capstone.trip.controller;
 
-import java.util.List;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
@@ -31,8 +29,6 @@ public class myPageController {
 
 	@Autowired
 	private BoardService boardService;
-	@Autowired
-	private AccompanyService accompanyService;
 
 	@GetMapping("/user/mypage/mypost")
 	public String mypost(Model model,
@@ -45,6 +41,7 @@ public class myPageController {
 		model.addAttribute("endPage", endPage);
 		model.addAttribute("boards", boards);
 		return "layout/user/mypage/mypage-mypost";
+
 	}
 
 	@GetMapping("/user/mypage/request")   // 내가 신청한 동행 목록이고 accompanyDB에 userId를 기준으로 리스트로 가져오면 될듯.
