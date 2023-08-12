@@ -14,6 +14,12 @@
   <link rel="stylesheet" th:href="@{../../css/user-save.css}">
   <link rel="stylesheet" th:href="@{../../css/myPage-main.css}">
 
+
+  <link rel="stylesheet" th:href="@{../../css/footer.css}">
+  <link rel="stylesheet" th:href="@{../../css/social-login.css}">
+  <link rel="stylesheet" th:href="@{../../css/user-login.css}">
+
+
   <title th:text="${title}">Trip To Leave!!!</title>
 
 </head>
@@ -43,7 +49,7 @@
             <a sec:authorize="isAuthenticated()" class="nav-link" href="/board/save" >글쓰기</a>
           </li>
           <li class="nav-item">
-            <a sec:authorize="isAuthenticated()" class="nav-link" href="/logout">로그아웃</a>
+            <a sec:authorize="isAuthenticated()" class="nav-link" href="/user/mypage">마이페이지</a>
           </li>
         </ul>
 

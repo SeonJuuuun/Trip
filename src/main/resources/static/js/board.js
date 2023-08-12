@@ -129,8 +129,8 @@ let index = {
             startday: $("#startday").val(),
             lastday: $("#lastday").val(),
             pnum: $("#pnum").val(),
-              city: $("#city").val(),
-                        state: $("#state").val()
+            city: $("#city").val(),
+            state: $("#state").val()
         }
         console.log(id);
         console.log(data);
