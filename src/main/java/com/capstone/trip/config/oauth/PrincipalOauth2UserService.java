@@ -25,27 +25,11 @@ import lombok.RequiredArgsConstructor;
 @Service
 public class PrincipalOauth2UserService extends DefaultOAuth2UserService {
 
-
 	@Autowired
 	private UserRepository userRepository;
 
-	//구글로 부터 받은 userRequest 데이터에 대한 후처리되는 함수
-	//함수 종료시 @AuthenticationPrincipal 어노테이션이 만들어진다.
 	@Override
 	public OAuth2User loadUser(OAuth2UserRequest userRequest) throws OAuth2AuthenticationException {
-
-		//"registraionId" 로 어떤 OAuth 로 로그인 했는지 확인 가능(google,naver등)
-		System.out.println("getClientRegistration: "+userRequest.getClientRegistration());
-		System.out.println("getAccessToken: "+userRequest.getAccessToken().getTokenValue());
-		System.out.println("getAttributes: "+ super.loadUser(userRequest).getAttributes());
-		//구글 로그인 버튼 클릭 -> 구글 로그인창 -> 로그인 완료 -> code를 리턴(OAuth-Clien라이브러리가 받아줌) -> code를 통해서 AcssToken요청(access토큰 받음)
-		// => "userRequest"가 감고 있는 정보
-		//회원 프로필을 받아야하는데 여기서 사용되는것이 "loadUser" 함수이다 -> 구글 로 부터 회원 프로필을 받을수 있다.
-
-
-		/**
-		 *  OAuth 로그인 회원 가입
-		 */
 		OAuth2User oAuth2User = super.loadUser(userRequest);
 		OAuth2UserInfo oAuth2UserInfo =null;
 
@@ -57,7 +41,7 @@ public class PrincipalOauth2UserService extends DefaultOAuth2UserService {
 		}
 
 
-		String provider = oAuth2UserInfo.getProvider(); //google , naver, facebook etc
+		String provider = oAuth2UserInfo.getProvider();
 		String providerId = oAuth2UserInfo.getProviderId();
 		String username = provider + "_" + providerId;
 		String password =  UUID.randomUUID().toString();

@@ -34,4 +34,9 @@ public class AccompanyService {
 		return accompanyRepository.findByUser_Id(id);
 	}
 
+	public List<Accompany> findByBoard_Id(Long id) {
+		return accompanyRepository.findByBoard_Id(id);
+	}
+
+
 }

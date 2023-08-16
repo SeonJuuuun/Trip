@@ -15,9 +15,9 @@ public class AccompanyController {
 
 	private final AccompanyService accompanyService;
 
-	// @GetMapping("/user/mypage/mypost/accompany/{id}")
-	// public String myDetail(@PathVariable Long id, Model model) {
-	// 	model.addAttribute("accompany", accompanyService.getAccompanyById(id));
-	// 	return "layout/accompany/accompany-detail";
-	// }
+	@GetMapping("/accompanyList/{id}")
+	public String accompanyStatus(@PathVariable Long id, Model model) {
+		model.addAttribute("accompany", accompanyService.findByBoard_Id(id));
+		return "layout/accompany/accompany-detail";
+	}
 }
