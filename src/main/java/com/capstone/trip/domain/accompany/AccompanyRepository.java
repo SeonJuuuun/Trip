@@ -9,4 +9,6 @@ import org.springframework.stereotype.Repository;
 public interface AccompanyRepository extends JpaRepository<Accompany, Long> {
 
 	List<Accompany> findByUser_Id(Long userId);
+
+	List<Accompany> findByBoard_Id(Long boardId);
 }
