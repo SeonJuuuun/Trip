@@ -62,4 +62,34 @@ public class UserController {
 	public String myPage() {
 		return "layout/user/myPage/myPage-main";
 	}
+
+	@GetMapping("/user/username/exists")
+	public ResponseEntity<String> checkUsernameDuplicate(@RequestParam(value = "username") String username) {
+		boolean isDuplicate = userService.checkUsernameDuplicate(username);
+		if (isDuplicate) {
+			return ResponseEntity.status(HttpStatus.BAD_REQUEST).body("사용할 수 없는 아이디입니다.");
+		} else {
+			return ResponseEntity.ok("사용할 수 있는 아이디입니다.");
+		}
+	}
+
+	@GetMapping("/user/email/exists")
+	public ResponseEntity<String> checkEmailDuplicate(@RequestParam(value = "email") String email) {
+		boolean isDuplicate = userService.checkEmailDuplicate(email);
+		if (isDuplicate) {
+			return ResponseEntity.status(HttpStatus.BAD_REQUEST).body("사용할 수 없는 이메일입니다.");
+		} else {
+			return ResponseEntity.ok("사용할 수 있는 이메일입니다.");
+		}
+	}
+
+	@GetMapping("/user/nickname/exists")
+	public ResponseEntity<String> checkNicknameDuplicate(@RequestParam(value = "nickname") String nickname) {
+		boolean isDuplicate = userService.checkNicknameDuplicate(nickname);
+		if (isDuplicate) {
+			return ResponseEntity.status(HttpStatus.BAD_REQUEST).body("사용할 수 없는 닉네임입니다.");
+		} else {
+			return ResponseEntity.ok("사용할 수 있는 닉네임입니다.");
+		}
+	}
 }
