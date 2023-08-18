@@ -44,6 +44,7 @@ public class SecurityConfig {
 			.authorizeHttpRequests()
 			.requestMatchers("/ws/chat/**").permitAll()
 			.requestMatchers("/chat/**").permitAll()
+			.requestMatchers("/review/**").permitAll()
 			.requestMatchers("ws://localhost:8080/ws/chat").permitAll()
 			.requestMatchers("/user/username/exists").permitAll() // 허용할 경로 설정
 			.requestMatchers("/user/email/exists").permitAll() // 허용할 경로 설정
