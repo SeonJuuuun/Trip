@@ -106,9 +106,10 @@ body {
 
 .form-signin {
     width: 100%;
-    max-width: 400px;
+    /*max-width: 400px;
     padding: 15px;
-    margin: auto;
+    margin: auto;*/
+    height: 100%;
 }
 
 .form-signin .checkbox {
@@ -140,6 +141,7 @@ body {
     text-align: center;
 }
 
+/*
 .myPage-click .myPage-1 {
     position: sticky;
     float: right;
