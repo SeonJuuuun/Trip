@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 
-<html xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+<html xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.thymeleaf.org/extras/spring-security"
+      xmlns="http://www.w3.org/1999/html">
 
 <head th:fragment="head (title)">
   <!-- Required meta tags -->
@@ -18,6 +19,7 @@
   <link rel="stylesheet" th:href="@{../../css/user-login.css}">
   <link rel="stylesheet" th:href="@{../../css/board-save.css}">
   <link rel="stylesheet" th:href="@{../../css/header.css}">
+  <link rel="stylesheet" th:href="@{../../css/accompany-detail.css}">
 
 
   <title th:text="${title}">Trip To Leave!!!</title>
@@ -26,42 +28,53 @@
 
 <body>
 
-<header th:fragment="header">
-  <!-- Fixed navbar -->
-  <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
+<!--헤더 부분에서 <div>로 제목과 아래 메뉴 분리해서 설정 하는방법-->
+
+<header th:fragment="header" class="header">
+  <nav class="navbar navbar-expand-sm bg-gray navbar-dark">
     <div class="container-fluid">
-      <a class="navbar-brand" href="/">Trip To Leave!!!@@</a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+      <a class="navbar-brand" style="color: #1b1b1b" href="/">Trip To Leave</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#collapsibleNavbar">
         <span class="navbar-toggler-icon"></span>
       </button>
-      <div class="collapse navbar-collapse" id="navbarCollapse" style="flex-grow:0;">
-        <ul class="navbar-nav me-auto mb-2 mb-md-0">
-          <li class="nav-item" style="float:right;">
-            <a sec:authorize="isAnonymous()" class="nav-link" href="/auth/user/login" >로그인</a>
-          </li>
-          <li class="nav-item" style="float:right;">
-            <a sec:authorize="isAnonymous()" class="nav-link" href="/auth/user/save" >회원가입</a>
-          </li>
-          <li class="nav-item"  style="float:right;">
-            <a sec:authorize="isAnonymous()" class="nav-link" href="/review/main">후기 게시판</a>
-          </li>
-          <li class="nav-item" style="float:right;">
-            <a sec:authorize="isAuthenticated()" class="nav-link" href="/board/save" >글쓰기</a>
+      <div class="collapse navbar-collapse justify-content-end" id="collapsibleNavbar">
+        <ul class="navbar-nav">
+          <li class="nav-item">
+            <a class="nav-link" style="color: #1b1b1b" sec:authorize="isAnonymous()" href="/auth/user/login">로그인</a>
           </li>
           <li class="nav-item">
-            <a sec:authorize="isAuthenticated()" class="nav-link" href="/user/mypage">마이페이지</a>
+            <a class="nav-link" style="color: #1b1b1b" sec:authorize="isAnonymous()" href="/auth/user/save">회원가입</a>
           </li>
         </ul>
-
       </div>
     </div>
-<!--    <div class="container-fluid" style="justify-content: flex-start; margin: 0px 12px;">-->
-<!--      <div class="asd">-->
-<!--        <button width="auto" font-size="16px" font-weight="bold" class="asf">홈</button>-->
-<!--      </div>-->
-<!--    </div>-->
   </nav>
 
+
+
+  <!--<a href="/"><h1>Trip To Leave</h1></a>
+  <div class="justify-content-end">
+      <nav class="header-nav">
+        <ul>
+          <li><a sec:authorize="isAnonymous()" href="/auth/user/login">로그인</a></li>
+          <li><a sec:authorize="isAnonymous()" href="/auth/user/save">회원가입</a></li>
+        </ul>
+      </nav>
+  </div>-->
+
+    <div class="header_low">
+      <ul>
+        <li>
+          <a sec:authorize="isAnonymous()" href="/review/main">후기 게시판</a>
+        </li>
+        <li>
+          <a sec:authorize="isAuthenticated()" href="/board/save" >글쓰기</a>
+        </li>
+        <li>
+          <a sec:authorize="isAuthenticated()" href="/user/mypage">마이페이지</a>
+        </li>
+        </ul>
+    </div>
 
 </header>
 

@@ -7,9 +7,15 @@
 
 <body class="d-flex flex-column h-100">
 <header th:replace="~{layout/header :: header}"> </header>
+    
+<!--<div class="d-flex" style="position: absolute; left: 20px; top: 70px;">
+  <h2 style="margin-right: 10px;">총 건수:</h2><h2 th:text="${boards.totalElements}"></h2>
+</div>-->
 
-<div id="slider" class="carousel slide" data-bs-ride="true">
-  <div class="carousel-indicators">
+<!--silder-->
+<div id="slider" class="carousel slide" data-bs-ride="true" style="top: 85px">
+  <div class="carousel-indicators" style="top: 270px;">
+
     <button type="button" data-bs-target="#slider" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
     <button type="button" data-bs-target="#slider" data-bs-slide-to="1" aria-label="Slide 2"></button>
     <button type="button" data-bs-target="#slider" data-bs-slide-to="2" aria-label="Slide 3"></button>
