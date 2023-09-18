@@ -68,6 +68,9 @@
           <a sec:authorize="isAnonymous()" href="/review/main">후기 게시판</a>
         </li>
         <li>
+          <a sec:authorize="isAuthenticated()" href="/notice/main">알람</a>
+        </li>
+        <li>
           <a sec:authorize="isAuthenticated()" href="/board/save" >글쓰기</a>
         </li>
         <li>

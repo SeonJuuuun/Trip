@@ -10,4 +10,9 @@ public class HelloController {
 	public String hello() {
 		return "hello Spring Boot!";
 	}
+
+	@GetMapping("/notice/main")
+	public String noticeIndex(){
+		return "알람 기능 입니다!";
+	}
 }
