@@ -8,9 +8,8 @@
 <body class="text-center d-flex flex-column h-100">
 <header th:replace="layout/header :: header"></header>
 
-<h1>마이페이지</h1>
 <main class="myPage-click">
-    <span class="myPage">
+    <div class="myPage">
         <nav>
             <ul class="myPage-1">
                     <a href="/user/information" target="ifPage1"><button>내 정보</button></a>
@@ -20,9 +19,10 @@
                     <a sec:authorize="isAuthenticated()" href="/logout"><button>로그아웃</button></a>
             </ul>
         </nav>
+        </div>
+        <div class="iframe">
         <iframe src="/user/update" width="500" height="700" name="ifPage1"></iframe>
-    </span>
-    </div>
+        </div>
 </main>
 
 <!--<footer th:replace="~{layout/footer :: footer}"></footer>-->
