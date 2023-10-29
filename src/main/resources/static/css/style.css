@@ -25,3 +25,19 @@ p {
 h3 {
     word-break: break-all;
 }
+
+.board-container {
+    padding-top: 60px;
+    display: flex;
+    justify-content: start;
+    flex-wrap: wrap;
+}
+
+#container-box {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    width: 280px;
+    height: 280px;
+    margin-right: 20px
+}

@@ -61,7 +61,7 @@ public class BoardService {
 			.orElseThrow(() -> new IllegalArgumentException("해당 id가 없습니다. id=" + id));
 		board.update(boardUpdateRequestDto.getTitle(), boardUpdateRequestDto.getContent(),
 			boardUpdateRequestDto.getStartday(), boardUpdateRequestDto.getLastday(), boardUpdateRequestDto.getPnum(),
-			boardUpdateRequestDto.getCity(), boardUpdateRequestDto.getState());
+			boardUpdateRequestDto.getCity(), boardUpdateRequestDto.getState(), boardUpdateRequestDto.getPicture());
 		return id;
 	}
 
