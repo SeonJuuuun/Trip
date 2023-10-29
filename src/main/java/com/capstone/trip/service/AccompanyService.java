@@ -1,5 +1,6 @@
 package com.capstone.trip.service;
 
+import jakarta.persistence.EntityNotFoundException;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -28,6 +29,15 @@ public class AccompanyService {
 		Accompany accompany = new Accompany();
 		accompany.save(board, user);
 		accompanyRepository.save(accompany);
+	}
+
+	@Transactional
+	public void updateAccompanyAccept(Long accompanyId, boolean accept) {
+		Accompany accompany = accompanyRepository.findById(accompanyId)
+				.orElseThrow(() -> new EntityNotFoundException("해당 Accompany가 존재하지 않습니다. ID: " + accompanyId));
+
+		// Accompany 엔티티의 accept 값을 업데이트
+		accompany.update(accept);
 	}
 
 	public List<Accompany> findByUser_Id(Long id) {

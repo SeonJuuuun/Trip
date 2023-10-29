@@ -1,5 +1,6 @@
 package com.capstone.trip.controller.api;
 
+import com.capstone.trip.dto.accompany.AccompanyAcceptDto;
 import org.springframework.security.core.annotation.AuthenticationPrincipal;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -30,4 +31,15 @@ public class AccompanyApiController {
 		accompanyService.save(userId, boardId, username, nickname, title, principalDetail.getUser());
 	}
 
+	@PostMapping("/apply/accompany/accept")
+	@ResponseBody
+	public void accept(@RequestBody AccompanyAcceptDto accompanyAcceptDto) {
+		Long accompanyId = accompanyAcceptDto.getAccompanyId();
+		boolean accept = accompanyAcceptDto.isAccept();
+
+		System.out.println("accompanyId: " + accompanyId);
+		System.out.println("accept: " + accept);
+
+		accompanyService.updateAccompanyAccept(accompanyId, accept);
+	}
 }

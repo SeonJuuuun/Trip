@@ -3,18 +3,20 @@ package com.capstone.trip.domain.accompany;
 import com.capstone.trip.domain.BaseTimeEntity;
 import com.capstone.trip.domain.board.Board;
 import com.capstone.trip.domain.user.User;
-
+import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.FetchType;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
+import jakarta.persistence.Id;
 import jakarta.persistence.ManyToOne;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
+import lombok.Builder.Default;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
+
 
 @Builder
 @Getter
@@ -35,8 +37,15 @@ public class Accompany extends BaseTimeEntity {
 	@JoinColumn(name = "boardId")
 	private Board board;
 
+	@Column
+	private boolean accept;
+
 	public void save(Board board, User user) {
 		this.board = board;
 		this.user = user;
+	}
+
+	public void update(boolean accept) {
+		this.accept = accept;
 	}
 }
