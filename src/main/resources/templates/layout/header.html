@@ -20,6 +20,7 @@
   <link rel="stylesheet" th:href="@{../../css/board-save.css}">
   <link rel="stylesheet" th:href="@{../../css/header.css}">
   <link rel="stylesheet" th:href="@{../../css/accompany-detail.css}">
+  <link rel="stylesheet" th:href="@{../../css/board-detail.css}">
 
 
   <title th:text="${title}">Trip To Leave!!!</title>
@@ -45,6 +46,17 @@
           <li class="nav-item">
             <a class="nav-link" style="color: #1b1b1b" sec:authorize="isAnonymous()" href="/auth/user/save">회원가입</a>
           </li>
+          <li >
+            <a class="nav-link" style="color: #1b1b1b"sec:authorize="isAuthenticated()" href="/notice/main">
+              <img id="alarm-image1" src="/images/alarm.png" width="25" height="25"/>
+            </a>
+          </li>
+          <li>
+            <a class="nav-link" style="color: #1b1b1b"sec:authorize="isAuthenticated()" href="/user/mypage">마이페이지</a>
+          </li>
+          <li>
+            <a class="nav-link" style="color: #1b1b1b"sec:authorize="isAuthenticated()" href="/board/save" >글쓰기</a>
+          </li>
         </ul>
       </div>
     </div>
@@ -65,16 +77,10 @@
     <div class="header_low">
       <ul>
         <li>
-          <a sec:authorize="isAnonymous()" href="/review/main">후기 게시판</a>
+          <a href="/" style="color: #1b1b1b">동행 게시판</a>
         </li>
         <li>
-          <a sec:authorize="isAuthenticated()" href="/notice/main">알람</a>
-        </li>
-        <li>
-          <a sec:authorize="isAuthenticated()" href="/board/save" >글쓰기</a>
-        </li>
-        <li>
-          <a sec:authorize="isAuthenticated()" href="/user/mypage">마이페이지</a>
+          <a href="/review/main">후기 게시판</a>
         </li>
         </ul>
     </div>

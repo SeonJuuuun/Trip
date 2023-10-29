@@ -56,7 +56,7 @@
       <!--트립소다 처럼 터치쪽으로 바꿀 예정-->
       <div class="form-floating m-3">
         배경 사진 :
-        <input type="file" accept=".jpg, .jpeg" name="picture" id="picture" onchange="readURL(this);">
+        <input type="file" accept="image/*" name="picture" id="picture" onchange="readURL(this);">
         </br>
         <img id="preview" width="600" height="400">
       </div>
@@ -95,6 +95,12 @@
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"
         integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
 <script th:src="@{/js/board.js}"></script>
+<script>
+
+  switch(document.getElementById("city")){
+        case "서울":
+
+</script>
 <script>
   var slider = document.getElementById("pnum");
   var output = document.getElementById("value1");

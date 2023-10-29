@@ -19,4 +19,7 @@ public class BoardUpdateRequestDto {
 	private String city;
 
 	private String state;
+
+    public String picture;
+
 }

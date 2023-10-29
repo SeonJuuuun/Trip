@@ -6,7 +6,7 @@
 <body class="d-flex flex-column h-100">
 <header th:replace="~{layout/reviewHeader :: header}"></header>
 
-<div id="slider" class="carousel slide" data-bs-ride="true">
+<div id="slider" class="carousel slide" data-bs-ride="true" style="top: 10px">
     <div class="carousel-indicators">
         <button type="button" data-bs-target="#slider" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
         <button type="button" data-bs-target="#slider" data-bs-slide-to="1" aria-label="Slide 2"></button>
@@ -53,8 +53,8 @@
 </form>
 
 <main class="flex-shrink-0">
-    <div class="container" style="display: inline-flex;">
-        <div th:each="review, reviewStat : ${reviews}" class="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
+    <div class="board-container">
+        <div id="container-box" th:each="review, reviewStat : ${reviews}" class="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
             <div class="col p-4 d-flex flex-column position-static" style="margin:5px" >
                 <a th:href="@{/review/{id}(id=${review.id})}" class="a-title">
                     <h3 class="mb-0 title" style="padding-bottom: 10px;" th:text="${review.title}"></h3>

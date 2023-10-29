@@ -1,0 +1,29 @@
+/* Create two equal columns that floats next to each other */
+.column {
+    float: left;
+    width: 900px;
+    padding: 10px;
+    height: 300px; /* Should be removed. Only for demonstration */
+}
+
+.column2 {
+    float: left;
+    width: 400px;
+    padding: 10px;
+    height: 300px; /* Should be removed. Only for demonstration */
+}
+
+/* Clear floats after the columns */
+.row:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+.id-box {
+    width: 450px;
+    height: 150px;
+    border: 1px solid #000;
+    box-sizing: border-box;
+    border-style: inset solid;
+}

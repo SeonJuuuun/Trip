@@ -13,7 +13,7 @@
 </div>-->
 
 <!--silder-->
-<div id="slider" class="carousel slide" data-bs-ride="true" style="top: 85px">
+<div id="slider" class="carousel slide" data-bs-ride="true" style="top: 10px">
   <div class="carousel-indicators" style="top: 270px;">
 
     <button type="button" data-bs-target="#slider" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
@@ -61,9 +61,11 @@
   <button class="btn btn-outline-success" type="submit">Search</button>
 </form>
 <main class="flex-shrink-0">
-  <div class="container" style="display: inline-flex;">
-    <div th:each="board, boardStat : ${boards}" class="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
+  <div class="board-container">
+    <div id="container-box" th:each="board, boardStat : ${boards}" class="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
       <div class="col p-4 d-flex flex-column position-static" style="margin:5px" >
+        <div th:text="${board.user.email}"></div>
+        <div th:text="|${board.startday} - ${board.lastday}|"></div>
         <a th:href="@{/board/{id}(id=${board.id})}" class="a-title">
           <h3 class="mb-0 title" style="padding-bottom: 10px;" th:text="${board.title}"></h3>
         </a>
