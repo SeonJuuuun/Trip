@@ -26,6 +26,7 @@ public class BoardSaveRequestDto {
 
 	private String state;
 
+
 	public Board toEntity() {
 		return Board.builder()
 			.title(title)

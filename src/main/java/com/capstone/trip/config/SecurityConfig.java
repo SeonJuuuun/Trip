@@ -49,7 +49,7 @@ public class SecurityConfig {
 			.requestMatchers("/user/username/exists").permitAll() // 허용할 경로 설정
 			.requestMatchers("/user/email/exists").permitAll() // 허용할 경로 설정
 			.requestMatchers("/user/nickname/exists").permitAll() // 허용할 경로 설정
-			.requestMatchers("/", "/auth/**", "/js/**", "/css/**", "/image/**").permitAll()
+			.requestMatchers("/", "/auth/**", "/js/**", "/css/**", "/image/**", "/error").permitAll()
 			.anyRequest().authenticated()
 			.and()
 			.formLogin()

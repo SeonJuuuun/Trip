@@ -20,6 +20,5 @@ public class BoardUpdateRequestDto {
 
 	private String state;
 
-    public String picture;
 
 }

@@ -48,6 +48,7 @@ let accompanyIndex = {
         };
 
         this.sendAccompanyAcceptOrReject(data);
+        alert("수락");
     },
 
     accompanyReject: function () {
@@ -60,6 +61,7 @@ let accompanyIndex = {
 
 
         this.sendAccompanyAcceptOrReject(data);
+        alert("거절");
     },
 
     sendAccompanyAcceptOrReject: function (data) {

@@ -81,6 +81,8 @@ let index = {
     },
 
     save: function () {
+
+
         let data = {
             title: $("#title").val(),
             content: $("#content").val(),
@@ -88,14 +90,10 @@ let index = {
             lastday: $("#lastday").val(),
             pnum: $("#pnum").val(),
             city: $("#city").val(),
-            state: $("#state").val(),
-            picture: $("#picture").val()
+            state: $("#state").val()
+
         }
-    if(city=="서울"){
-        picture.src = '/images/seoul.jpg';
-    }else if(city=="경기"){
-        picture.src = '/images/gyeonggi.jpg';
-    }
+
         $.ajax({
             type: "POST",
             url: "/api/v1/board",
@@ -111,7 +109,7 @@ let index = {
     },
 
     deleteById: function () {
-        let id = $("#id").text();
+        let id = $("#id").val();
 
         $.ajax({
             type: "DELETE",
@@ -136,7 +134,6 @@ let index = {
             pnum: $("#pnum").val(),
             city: $("#city").val(),
             state: $("#state").val(),
-            picture: $("#picture").val()
         }
         console.log(id);
         console.log(data);

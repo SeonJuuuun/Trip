@@ -41,3 +41,16 @@ h3 {
     height: 280px;
     margin-right: 20px
 }
+.img-box {
+    position: relative;
+}
+.img-text{
+    position: absolute;
+    border: 1px solid;
+    border-radius: 30px;
+    background-color : white;
+    top: 15%;
+    left: 15%;
+    transform: translate( -70%, -50% );
+    padding: 5px 10px;
+}
