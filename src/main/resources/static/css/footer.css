@@ -1,11 +1,27 @@
 footer{
-    height: 60px;
+    width: 100%;
+    height: 200px;
     position: relative;
     transform: translateY(0%);
-    border-top: 1px solid #248efe;
+    border-top: 1px solid #d3d3d3;
 
     display: flex;
     align-items: center;
     justify-content: center;
-    background-color: #62679b;
+}
+.footer-container{
+    width: 100%;
+    height: 200px;
+    padding: 48px;
+    margin: 48px;
+
+    position: relative;
+    transform: translateY(0%);
+    border-top: 1px solid #d3d3d3;
+
+}
+.wrapper{
+	height:auto;
+	min-height: 100%;
+	padding-bottom: 200px; // 현재 푸터의 높이
 }
