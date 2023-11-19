@@ -121,6 +121,14 @@
                         완료</a>
                 </div>
             </div>
+            <div class="id-box">
+                <div class="container border rounded flex-md-row mb-4 shadow-sm h-md-250" style="height:180px;">
+                    <div>동행 확정자</div>
+                    <span th:each="accompany : ${realAccompanyList}">
+                           <div th:text="${accompany.user.nickname}"></div>
+                    </span>
+                </div>
+            </div>
         </div>
     </div>
 

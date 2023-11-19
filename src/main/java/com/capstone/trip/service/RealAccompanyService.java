@@ -5,6 +5,7 @@ import com.capstone.trip.domain.accompany.RealAccompanyRepository;
 import com.capstone.trip.domain.board.Board;
 import com.capstone.trip.domain.board.BoardRepository;
 import com.capstone.trip.domain.user.User;
+import java.util.List;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -23,5 +24,9 @@ public class RealAccompanyService {
         RealAccompany realAccompany = new RealAccompany();
         realAccompany.save(board, user);
         realAccompanyRepository.save(realAccompany);
+    }
+
+    public List<RealAccompany> findByBoardId(Long boardId) {
+        return realAccompanyRepository.findByBoardId(boardId);
     }
 }
