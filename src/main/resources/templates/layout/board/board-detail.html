@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en" class="h-100" xmlns:th="http://www.thymeleaf.org" xmlns:id="http://www.w3.org/1999/xhtml">
+<html lang="en" class="h-100" xmlns:th="http://www.thymeleaf.org">
 
 <head th:replace="~{layout/header :: head ('board-detail')}"></head>
 
@@ -65,7 +65,8 @@
                 <span th:text="${board.count}"></span>
                 &bull;
                 <span th:if="${board.user.id == #authentication.principal.id}">
-                    <a th:href="@{/board/{id}/update(id=${board.id})}" style="text-decoration:none;" id="btn-update">수정</a>
+                    <a th:href="@{/board/{id}/update(id=${board.id})}" style="text-decoration:none;"
+                       id="btn-update">수정</a>
                     &bull;
                     <button id="btn-delete" style="border:0; background-color: transparent; color:red;">삭제</button>
                 </span>
@@ -77,12 +78,13 @@
                 <form>
                     <div class="container" style="border-Radius: 0.5rem">
                         <input type="hidden" id="boardId" th:value="${board.id}">
-                                <textarea class="form-control" id="reply-content" rows="1"
-                                          style="float:left; width:92%; border:none; padding:6px 0px; resize:none; outline: none!important;"
-                                          placeholder="댓글을 입력해주세요"></textarea>
+                        <textarea class="form-control" id="reply-content" rows="1"
+                                  style="float:left; width:92%; border:none; padding:6px 0px; resize:none; outline: none!important;"
+                                  placeholder="댓글을 입력해주세요"></textarea>
 
-                                <button id="reply-btn-save" type="button" class="btn btn-dark" style="float:right; border: none;
-  background-color: transparent; color:#1EC800">게시</button>
+                        <button id="reply-btn-save" type="button" class="btn btn-dark" style="float:right; border: none;
+  background-color: transparent; color:#1EC800">게시
+                        </button>
                     </div>
                 </form>
             </div>
@@ -103,33 +105,35 @@
                     </li>
                 </ul>
             </div>
-
-
         </div>
         <div class="column2">
             <div class="id-box">
                 <div class="container border rounded flex-md-row mb-4 shadow-sm h-md-250" style="height:180px;">
                     <div th:text="${board.user.email}"></div>
-                    <a class="btn btn-dark mt-3" th:if="${board.user.id == #authentication.principal.id}" th:href="@{/accompanyList/{boardId}(boardId=${board.id})}" style="text-decoration:none;">신청 현황</a>
-                    <button id="accompany-btn-save" type="button" th:value="${board.id}" class="btn btn-dark mt-3">동행신청</button>
-
+                    <a class="btn btn-dark mt-3" th:if="${board.user.id == #authentication.principal.id}"
+                       th:href="@{/accompanyList/{boardId}(boardId=${board.id})}" style="text-decoration:none;">신청
+                        현황</a>
+                    <button id="accompany-btn-save" type="button" th:value="${board.id}" class="btn btn-dark mt-3">
+                        동행신청
+                    </button>
+                    <a class="" th:if="${board.user.id == #authentication.principal.id}"
+                       th:href="@{/accompanyList/{boardId}(boardId=${board.id})}" style="text-decoration:none;">동행
+                        완료</a>
                 </div>
             </div>
         </div>
     </div>
 
 
-
-        <div id="userInfo" th:if="
+    <div id="userInfo" th:if="
         ${#authentication.principal}">
-            <input type="hidden" id="boardTitle" th:value="${board.title}">
-            <input type="hidden" id="username" th:value="${#authentication.principal.username}">
-            <input type="hidden" id="nickname" th:value="${#authentication.principal.nickname}">
-        </div>
+        <input type="hidden" id="boardTitle" th:value="${board.title}">
+        <input type="hidden" id="username" th:value="${#authentication.principal.username}">
+        <input type="hidden" id="nickname" th:value="${#authentication.principal.nickname}">
+    </div>
 
 
 </main>
-
 
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
@@ -140,8 +144,6 @@
 <script th:src="@{/js/board.js}"></script>
 <script th:src="@{/js/reply.js}"></script>
 <script th:src="@{/js/accompany.js}"></script>
-
 </script>
 </body>
-
 </html>
