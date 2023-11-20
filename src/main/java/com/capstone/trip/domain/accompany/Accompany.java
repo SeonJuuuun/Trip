@@ -8,12 +8,11 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.FetchType;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
-import jakarta.persistence.JoinColumn;
 import jakarta.persistence.Id;
+import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
-import lombok.Builder.Default;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 
@@ -25,27 +24,31 @@ import lombok.NoArgsConstructor;
 @Entity
 public class Accompany extends BaseTimeEntity {
 
-	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private Long id;
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
 
-	@ManyToOne(fetch = FetchType.EAGER)
-	@JoinColumn(name = "userId")
-	private User user;
+    @ManyToOne(fetch = FetchType.EAGER)
+    @JoinColumn(name = "userId")
+    private User user;
 
-	@ManyToOne(fetch = FetchType.EAGER)
-	@JoinColumn(name = "boardId")
-	private Board board;
+    @ManyToOne(fetch = FetchType.EAGER)
+    @JoinColumn(name = "boardId")
+    private Board board;
 
-	@Column
-	private boolean accept;
+    @Column
+    private boolean accept;
 
-	public void save(Board board, User user) {
-		this.board = board;
-		this.user = user;
-	}
+    public void save(Board board, User user) {
+        this.board = board;
+        this.user = user;
+    }
 
-	public void update(boolean accept) {
-		this.accept = accept;
-	}
+    public void update(boolean accept) {
+        this.accept = accept;
+    }
+
+    public String getUserNickname() {
+        return this.user != null ? this.user.getNickname() : null;
+    }
 }

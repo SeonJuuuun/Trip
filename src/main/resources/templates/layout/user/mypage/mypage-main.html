@@ -13,15 +13,15 @@
         <nav>
             <ul class="myPage-1">
 
-                    <a href="/user/information" target="ifPage1"><button>내 정보</button></a>
-                    <a href="/user/mypage/mypost" target="ifPage1"><button>내가 쓴 동행글</button></a>
-                    <a href="/user/mypage/request" target="ifPage1"><button>동행 신청 목록</button></a>
+                    <a href="/user/mypage/information"><button>내 정보</button></a>
+                    <a href="/user/mypage/mypost"><button>내가 쓴 동행글</button></a>
+                    <a href="/user/mypage/request"><button>동행 신청 목록</button></a>
                     <a sec:authorize="isAuthenticated()" href="/logout"><button>로그아웃</button></a>
             </ul>
         </nav>
         </div>
-        <div class="iframe">
-        <iframe src="/user/information" width="500" height="700" name="ifPage1"></iframe>
+        <div class="myPage2">
+
         </div>
 </main>
 

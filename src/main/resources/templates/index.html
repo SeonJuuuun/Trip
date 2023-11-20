@@ -55,26 +55,48 @@
   </div>
   <hr class="border border-primary">
 
-  <form class="d-flex" style="position: relative; top: 40px;" method="get" th:action="@{/}">
-    <input class="form-control me-2" type="search" placeholder="어디로 여행가시나요?" aria-label="Search"
-           id="search" name="search" th:value="${param.search}">
-    <button class="btn btn-outline-success" type="submit">Search</button>
-  </form>
-  <main class="flex-shrink-0">
-    <div class="board-container">
-      <div id="container-box" th:each="board, boardStat : ${boards}" class="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
-        <div class="col p-4 d-flex flex-column position-static" style="margin:5px" >
-          <div th:text="${board.user.email}"></div>
-          <div th:text="|${board.startday} - ${board.lastday}|"></div>
-          <a th:href="@{/board/{id}(id=${board.id})}" class="a-title">
-            <h3 class="mb-0 title" style="padding-bottom: 10px;" th:text="${board.title}"></h3>
-          </a>
-          <div class="card-text mb-auto" th:text="${board.content}">
-          </div>
-          <div class="mb-1 text-muted" style="padding-top: 15px;" th:text="${#temporals.format(board.createdDate, 'yyyy-MM-dd')}"></div>
+<form class="d-flex" style="position: relative; top: 40px;" method="get" th:action="@{/}">
+  <input class="form-control me-2" type="search" placeholder="어디로 여행가시나요?" aria-label="Search"
+         id="search" name="search" th:value="${param.search}">
+  <button class="btn btn-outline-success" type="submit">Search</button>
+</form>
+<main class="flex-shrink-0">
+  <div class="board-container">
+    <div id="container-box" th:each="board, boardStat : ${boards}" class="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
+      <a th:href="@{/board/{id}(id=${board.id})}" class="a-title" style="text-decoration:none;">
+        <div>
+
+        <div style="font-size:12px; margin-bottom:20px;">
+          <span style="float left" th:text="${board.user.email}"></span>
+          <span style="float:right" th:text="|${board.startday} - ${board.lastday}|"></span>
         </div>
-        <p th:if="(${boardStat.count}+1)%4==0"></p>
-      </div>
+
+        <div class="img-box">
+          <img th:if="${board.city=='서울'}" src ="/images/seoul.jpg"  width="280px" height="150px">
+          <img th:if="${board.city=='경기'}" src ="/images/gyeonggi.jpg"  width="280px" height="150px">
+          <img th:if="${board.city=='광주'}" src ="/images/gwangju.jpg"  width="280px" height="150px">
+          <img th:if="${board.city=='대구'}" src ="/images/daegu.jpg"  width="280px" height="150px">
+          <img th:if="${board.city=='제주'}" src ="/images/jeju.jpg"  width="280px" height="150px">
+          <img th:if="${board.city=='경북'}" src ="/images/gyeongsangbuk.jpg"  width="280px" height="150px">
+          <img th:if="${board.city=='경남'}" src ="/images/gyeongsangnam.jpg"  width="280px" height="150px">
+          <img th:if="${board.city=='부산'}" src ="/images/busan.jpg"  width="280px" height="150px">
+          <img th:if="${board.city=='울산'}" src ="/images/ulsan.jpg"  width="280px" height="150px">
+          <img th:if="${board.city=='충북'}" src ="/images/chungbuk.jpg"  width="280px" height="150px">
+          <img th:if="${board.city=='충남'}" src ="/images/chungnam.jpg"  width="280px" height="150px">
+          <img th:if="${board.city=='전북'}" src ="/images/jeonbuk.jpg"  width="280px" height="150px">
+          <img th:if="${board.city=='전남'}" src ="/images/jeonnam.gif"  width="280px" height="150px">
+          <img th:if="${board.city=='대전'}" src ="/images/daejeon.jpg"  width="280px" height="150px">
+          <img th:if="${board.city=='인천'}" src ="/images/incheon.jpg"  width="280px" height="150px">
+          <img th:if="${board.city=='강원'}" src ="/images/gangwon.jpg"  width="280px" height="150px">
+          <div class="img-text" th:text="${board.city}"></div>
+        </div>
+          <h3 class="mb-0 title" style="padding-bottom: 10px; overflow: hidden; text-overflow: ellipsis;" th:text="${board.title}"></h3>
+        <div class="card-text mb-auto" th:text="${board.content}">
+        </div>
+        </div>
+      <p th:if="(${boardStat.count}+1)%4==0"></p>
+      </a>
+    </div>
 
 
     </div>

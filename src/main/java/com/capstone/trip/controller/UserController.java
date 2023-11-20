@@ -46,13 +46,13 @@ public class UserController {
 	/**
 	 * 회원수정 페이지
 	 */
-	@GetMapping("/user/update")
+	@GetMapping("/user/mypage/update")
 	public String userUpdate(@AuthenticationPrincipal PrincipalDetail principalDetail, Model model) {
 		model.addAttribute("principal", principalDetail.getUser());
 		return "layout/user/user-update";
 	}
 
-	@GetMapping("/user/information")
+	@GetMapping("/user/mypage/information")
 	public String userInformation(@AuthenticationPrincipal PrincipalDetail principalDetail, Model model) {
 		model.addAttribute("principal", principalDetail.getUser());
 		return "layout/user/user-information";
@@ -60,7 +60,7 @@ public class UserController {
 
 	@GetMapping({"/user", "/user/mypage"})
 	public String myPage() {
-		return "layout/user/myPage/myPage-main";
+		return "layout/user/user-information";
 	}
 
 	@GetMapping("/user/username/exists")
