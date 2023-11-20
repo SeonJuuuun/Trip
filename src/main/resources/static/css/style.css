@@ -1,7 +1,7 @@
 .card-text {
-    display: -webkit-box;
+    /*display: -webkit-box;
     -webkit-line-clamp: 3;
-    -webkit-box-orient: vertical;
+    -webkit-box-orient: vertical;*/
     overflow: hidden;
     text-overflow: ellipsis;
     word-break: break-all;
@@ -34,10 +34,10 @@ h3 {
 }
 
 #container-box {
+    width: 280px;
     overflow: hidden;
     text-overflow: ellipsis;
     white-space: nowrap;
-    width: 280px;
     height: 280px;
     margin-right: 20px
 }

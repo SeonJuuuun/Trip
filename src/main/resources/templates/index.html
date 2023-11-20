@@ -90,7 +90,7 @@
           <img th:if="${board.city=='강원'}" src ="/images/gangwon.jpg"  width="280px" height="150px">
           <div class="img-text" th:text="${board.city}"></div>
         </div>
-          <h3 class="mb-0 title" style="padding-bottom: 10px;" th:text="${board.title}"></h3>
+          <h3 class="mb-0 title" style="padding-bottom: 10px; overflow: hidden; text-overflow: ellipsis;" th:text="${board.title}"></h3>
         <div class="card-text mb-auto" th:text="${board.content}">
         </div>
         </div>
