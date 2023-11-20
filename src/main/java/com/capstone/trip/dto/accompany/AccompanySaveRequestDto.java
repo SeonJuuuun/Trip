@@ -1,7 +1,5 @@
 package com.capstone.trip.dto.accompany;
 
-import com.capstone.trip.domain.Accompany.Accompany;
-import com.capstone.trip.domain.board.Board;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -14,10 +12,10 @@ import lombok.Setter;
 @NoArgsConstructor
 public class AccompanySaveRequestDto {
 
-	private Long userId;
-	private Long boardId;
-	private String title;
-	private String username;
-	private String nickname;
+    private Long userId;
+    private Long boardId;
+    private String title;
+    private String username;
+    private String nickname;
 
 }
