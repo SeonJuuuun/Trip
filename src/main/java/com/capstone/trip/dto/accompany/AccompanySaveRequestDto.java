@@ -1,6 +1,6 @@
 package com.capstone.trip.dto.accompany;
 
-import com.capstone.trip.domain.accompany.Accompany;
+import com.capstone.trip.domain.Accompany.Accompany;
 import com.capstone.trip.domain.board.Board;
 
 import lombok.AllArgsConstructor;

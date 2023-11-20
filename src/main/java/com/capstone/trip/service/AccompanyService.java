@@ -7,8 +7,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-import com.capstone.trip.domain.accompany.Accompany;
-import com.capstone.trip.domain.accompany.AccompanyRepository;
+import com.capstone.trip.domain.Accompany.Accompany;
+import com.capstone.trip.domain.Accompany.AccompanyRepository;
 import com.capstone.trip.domain.board.Board;
 import com.capstone.trip.domain.board.BoardRepository;
 import com.capstone.trip.domain.user.User;
@@ -48,5 +48,8 @@ public class AccompanyService {
 		return accompanyRepository.findByBoard_Id(id);
 	}
 
-
+	/*@Transactional
+	public void deleteByAccompany(Long id) {
+		accompanyRepository.deleteById(id);
+	}*/
 }

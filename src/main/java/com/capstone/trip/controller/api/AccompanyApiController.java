@@ -3,9 +3,7 @@ package com.capstone.trip.controller.api;
 import com.capstone.trip.dto.accompany.AccompanyAcceptDto;
 import org.springframework.security.core.annotation.AuthenticationPrincipal;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.bind.annotation.*;
 
 import com.capstone.trip.config.auth.PrincipalDetail;
 import com.capstone.trip.dto.accompany.AccompanySaveRequestDto;
@@ -42,4 +40,10 @@ public class AccompanyApiController {
 
 		accompanyService.updateAccompanyAccept(accompanyId, accept);
 	}
+
+	/*@DeleteMapping("/api/v1/Accompany/{id}")
+	public Long deleteByAccompany(@PathVariable Long id) {
+		accompanyService.deleteByAccompany(id);
+		return id;
+	}*/
 }

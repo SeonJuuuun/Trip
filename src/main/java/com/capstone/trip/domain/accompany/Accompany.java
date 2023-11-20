@@ -1,4 +1,4 @@
-package com.capstone.trip.domain.accompany;
+package com.capstone.trip.domain.Accompany;
 
 import com.capstone.trip.domain.BaseTimeEntity;
 import com.capstone.trip.domain.board.Board;

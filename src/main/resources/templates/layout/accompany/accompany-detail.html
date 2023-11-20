@@ -37,8 +37,9 @@
         <span th:text="${#temporals.format(accompany.createdDate, 'yyyy-MM-dd HH:mm')}"></span>
       </td>
       <td>
-        <button id="accompany-btn-accept" type="button" th:value="${accompany.id}" class="btn btn-dark mt-3" >수락</button>
-        <button id="accompany-btn-reject" type="button" th:value="${accompany.id}" class="btn btn-dark mt-3" >거절</button>
+        <button id="accompany-btn-accept" type="button" th:value="${accompany.id}" class="btn btn-dark mt-3" onclick="history.back()">수락</button>
+        <input type="hidden" id="accompanyId" th:value="${accompany.id}">
+        <button id="btn-delete" class="btn btn-dark mt-3" onclick="history.back()">거절</button>
       </td>
     </tr>
     </tbody>

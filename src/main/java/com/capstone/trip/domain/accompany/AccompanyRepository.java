@@ -1,4 +1,4 @@
-package com.capstone.trip.domain.accompany;
+package com.capstone.trip.domain.Accompany;
 
 import java.util.List;
 

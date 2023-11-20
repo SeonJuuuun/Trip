@@ -13,7 +13,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 
 import com.capstone.trip.config.auth.PrincipalDetail;
-import com.capstone.trip.domain.accompany.Accompany;
+import com.capstone.trip.domain.Accompany.Accompany;
 import com.capstone.trip.domain.board.Board;
 import com.capstone.trip.service.AccompanyService;
 import com.capstone.trip.service.BoardService;

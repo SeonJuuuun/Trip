@@ -13,6 +13,7 @@
             <th scope="col">제목</th>
             <th scope="col">내용</th>
             <th scope="col">신청 날짜</th>
+            <th scope="col">여부</th>
         </tr>
         </thead>
         <tbody>
@@ -30,6 +31,9 @@
             </td>
             <td>
                 <span th:text="${#temporals.format(accompany.createdDate, 'yyyy-MM-dd HH:mm')}"></span>
+            </td>
+            <td>
+
             </td>
         </tr>
         </tbody>

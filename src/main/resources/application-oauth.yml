@@ -19,7 +19,6 @@ spring:
           provider: naver
 
       provider:
-
         naver:
           authorizationUri: https://nid.naver.com/oauth2.0/authorize
           tokenUri: https://nid.naver.com/oauth2.0/token
