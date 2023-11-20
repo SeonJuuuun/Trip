@@ -7,7 +7,7 @@
 
 <body class="d-flex flex-column h-100">
 <header th:replace="~{layout/header :: header}"> </header>
-    
+
 <!--<div class="d-flex" style="position: absolute; left: 20px; top: 70px;">
   <h2 style="margin-right: 10px;">총 건수:</h2><h2 th:text="${boards.totalElements}"></h2>
 </div>-->
@@ -22,8 +22,8 @@
   </div>
   <div class="carousel-inner">
     <div class="carousel-item active">
-        <img src="/images/slide.jpeg" class="d-block w-100" alt="slider images"
-             style="max-width: 800px; max-height: 300px; margin:0 auto;">
+      <img src="/images/slide.jpeg" class="d-block w-100" alt="slider images"
+           style="max-width: 800px; max-height: 300px; margin:0 auto;">
     </div>
     <div class="carousel-item">
       <img src="/images/slide.jpeg" class="d-block w-100" alt="slider images"
@@ -99,22 +99,22 @@
     </div>
 
 
-  </div>
-</main>
+    </div>
+  </main>
 
-<nav aria-label="Page navigation example">
-  <ul class="pagination">
-    <li class="page-item" th:classappend="${1 == boards.pageable.pageNumber + 1} ? 'disabled' : '' ">
-      <a class="page-link" th:href="@{/(page=${boards.pageable.pageNumber - 1}, search=${param.search})}">Previous</a>
-    </li>
-    <li class="page-item" th:classappend="${i == boards.pageable.pageNumber + 1} ? 'active' : '' " th:each="i : ${#numbers.sequence(startPage, endPage)}">
-      <a class="page-link" th:href="@{/(page=${i - 1}, search=${param.search})}" th:text="${i}">1</a>
-    </li>
-    <li class="page-item" th:classappend="${boards.totalPages == boards.pageable.pageNumber + 1} ? 'disabled' : '' ">
-      <a class="page-link" th:href="@{/(page=${boards.pageable.pageNumber + 1}, search=${param.search})}">Next</a>
-    </li>
-  </ul>
-</nav>
+  <nav aria-label="Page navigation example">
+    <ul class="pagination">
+      <li class="page-item" th:classappend="${1 == boards.pageable.pageNumber + 1} ? 'disabled' : '' ">
+        <a class="page-link" th:href="@{/(page=${boards.pageable.pageNumber - 1}, search=${param.search})}">Previous</a>
+      </li>
+      <li class="page-item" th:classappend="${i == boards.pageable.pageNumber + 1} ? 'active' : '' " th:each="i : ${#numbers.sequence(startPage, endPage)}">
+        <a class="page-link" th:href="@{/(page=${i - 1}, search=${param.search})}" th:text="${i}">1</a>
+      </li>
+      <li class="page-item" th:classappend="${boards.totalPages == boards.pageable.pageNumber + 1} ? 'disabled' : '' ">
+        <a class="page-link" th:href="@{/(page=${boards.pageable.pageNumber + 1}, search=${param.search})}">Next</a>
+      </li>
+    </ul>
+  </nav>
 
 </div>
 

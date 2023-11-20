@@ -21,6 +21,7 @@ public class UserSaveRequestDto {
 	private String gender;
 	private String date;
 	private Role role;
+	private String type;
 
 	public User toEntity() {
 		return User.builder()
@@ -31,6 +32,7 @@ public class UserSaveRequestDto {
 			.gender(gender)
 			.date(date)
 			.role(Role.USER)
+				.type(type)
 			.build();
 	}
 }

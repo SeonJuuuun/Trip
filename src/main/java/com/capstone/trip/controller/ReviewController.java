@@ -26,6 +26,9 @@ public class ReviewController {
 		return "layout/review/review-update";
 	}
 
+	@GetMapping("/review/star")
+	public String star() { return "layout/review/review-star";}
+
 	/**
 	 * 글상세 페이지
 	 */

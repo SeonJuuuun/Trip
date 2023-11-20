@@ -44,6 +44,7 @@ let index = {
             nickname: $("#nickname").val(),
             gender: $("#gender").val(),
             date: $("#date").val()
+            type: $("#type").val()
         }
 
         $.ajax({
