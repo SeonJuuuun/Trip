@@ -125,7 +125,9 @@
                 <div class="container border rounded flex-md-row mb-4 shadow-sm h-md-250" style="height:180px;">
                     <div>동행 확정자</div>
                     <span th:each="accompany : ${realAccompanyList}">
-                           <div th:text="${accompany.user.nickname}"></div>
+                        <a th:href="@{'/user-accompany-history/' + ${accompany.user.id}}">
+                             <div th:text="${accompany.user.nickname}"></div>
+                        </a>
                     </span>
                 </div>
             </div>

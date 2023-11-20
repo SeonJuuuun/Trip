@@ -9,4 +9,5 @@ public interface RealAccompanyRepository extends JpaRepository<RealAccompany, Lo
 
     List<RealAccompany> findByBoardId(Long boardId);
 
+    List<RealAccompany> findByUserId(Long userId);
 }
