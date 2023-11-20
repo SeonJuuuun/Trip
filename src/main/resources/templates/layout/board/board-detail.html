@@ -116,7 +116,7 @@
                     <button id="accompany-btn-save" type="button" th:value="${board.id}" class="btn btn-dark mt-3">
                         동행신청
                     </button>
-                    <a class="" th:if="${board.user.id == #authentication.principal.id}"
+                    <a class="btn btn-dark mt-3" th:if="${board.user.id == #authentication.principal.id}"
                        th:href="@{/accompanyList/{boardId}(boardId=${board.id})}" style="text-decoration:none;">동행
                         완료</a>
                 </div>
