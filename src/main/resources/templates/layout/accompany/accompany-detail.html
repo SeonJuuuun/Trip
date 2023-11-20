@@ -1,45 +1,48 @@
 <!DOCTYPE html>
 <html lang="ko" xmlns:th="http://www.thymeleaf.org">
 <head th:replace="~{layout/header :: head ('블로그')}">
-  <title>블로그</title>
+    <title>블로그</title>
 </head>
 <body>
 
 <div class="container">
-  <table>
-    <thead class="thead-light">
-    <tr class="text-center">
-      <th scope="col">신청인 닉네임</th>
-      <th scope="col">여행 시작 날짜</th>
-      <th scope="col">여행 종료 날짜</th>
-      <th scope="col">신청 날짜</th>
-      <th scope="col">수락 여부</th>
-    </tr>
-    </thead>
-    <tbody>
-    <tr class="text-center" th:each="accompany : ${accompany}">
-      <td>
-        <a th:href="@{/board/{id}(id=${accompany.board.id})}" class="a-title">
-          <span th:text="${accompany.user.nickname}"></span>
-        </a>
-      </td>
-      <td>
-        <span th:text="${accompany.board.startday}"></span>
-      </td>
-      <td>
-        <span th:text="${accompany.board.lastday}"></span>
-      </td>
-      <td>
-        <span th:text="${#temporals.format(accompany.createdDate, 'yyyy-MM-dd HH:mm')}"></span>
-      </td>
-      <td>
-        <button id="accompany-btn-accept" type="button" th:value="${accompany.id}" class="btn btn-dark mt-3" onclick="history.back()">수락</button>
-        <input type="hidden" id="accompanyId" th:value="${accompany.id}">
-        <button id="btn-delete" class="btn btn-dark mt-3" onclick="history.back()">거절</button>
-      </td>
-    </tr>
-    </tbody>
-  </table>
+    <table>
+        <thead class="thead-light">
+        <tr class="text-center">
+            <th scope="col">신청인 닉네임</th>
+            <th scope="col">여행 시작 날짜</th>
+            <th scope="col">여행 종료 날짜</th>
+            <th scope="col">신청 날짜</th>
+            <th scope="col">수락 여부</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr class="text-center" th:each="accompany : ${accompany}">
+            <td>
+                <a th:href="@{/board/{id}(id=${accompany.board.id})}" class="a-title">
+                    <span th:text="${accompany.user.nickname}"></span>
+                </a>
+            </td>
+            <td>
+                <span th:text="${accompany.board.startday}"></span>
+            </td>
+            <td>
+                <span th:text="${accompany.board.lastday}"></span>
+            </td>
+            <td>
+                <span th:text="${#temporals.format(accompany.createdDate, 'yyyy-MM-dd HH:mm')}"></span>
+            </td>
+            <td>
+                <button id="realAccompany-save" type="button" th:data-accompany-id="${accompany.id}"
+                        class="btn btn-dark mt-3">수락
+                </button>
+                <button id="btn-delete" type="button" th:data-accompany-id="${accompany.id}" class="btn btn-dark mt-3"
+                >거절
+                </button>
+            </td>
+        </tr>
+        </tbody>
+    </table>
 </div>
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
