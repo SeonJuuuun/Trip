@@ -34,8 +34,8 @@ public class RealAccompany extends BaseTimeEntity {
     @JoinColumn(name = "boardId")
     private Board board;
 
-    public void save(Board board, User user) {
-        this.board = board;
-        this.user = user;
+    public void save(Accompany accompany) {
+        this.user = accompany.getUser();
+        this.board = accompany.getBoard();
     }
 }

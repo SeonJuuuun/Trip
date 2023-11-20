@@ -47,4 +47,8 @@ public class Accompany extends BaseTimeEntity {
     public void update(boolean accept) {
         this.accept = accept;
     }
+
+    public String getUserNickname() {
+        return this.user != null ? this.user.getNickname() : null;
+    }
 }

@@ -21,16 +21,9 @@ let accompanyIndex = {
 
     realAccompanySave: function () {
         let accompanyId = $("#realAccompany-save").attr("data-accompany-id");
-        let boardId = $("#realAccompany-save").attr("data-board-id");
-        let title = $("#realAccompany-save").attr("data-title");
-        let username = $("#realAccompany-save").attr("data-username");
-        let nickname = $("#realAccompany-save").attr("data-nickname");
 
         let data = {
-            boardId: boardId,
-            title: title,
-            username: username,
-            nickname: nickname
+            accompanyId: accompanyId,
         };
 
         $.ajax({

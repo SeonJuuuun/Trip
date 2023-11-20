@@ -11,9 +11,5 @@ import lombok.Setter;
 @NoArgsConstructor
 public class RealAccompanySaveRequestDto {
 
-    private Long userId;
-    private Long boardId;
-    private String title;
-    private String username;
-    private String nickname;
+    private Long accompanyId;
 }
