@@ -10,9 +10,9 @@ body {
     /*font-family: 'Nanum Gothic', sans-serif;*/
     display: flex;
     justify-content: center;
-    align-items: center;
     height: 100vh;
     background-size: cover;
+    margin-top: 50px;
 }
 
 /*body::before {
@@ -137,6 +137,18 @@ body {
     text-align: center;
 }
 
+ .security_text {
+    height: 200px;
+    width: 800px;
+    border: 1px solid black;
+    background-color: white;
+    white-space: pre-line;
+    overflow-y: scroll;
+    margin: 0 auto 20px;
+ }
+ .agree {
+    text-align : right;
+ }
 /*
 .myPage-click .myPage-1 {
     position: sticky;
