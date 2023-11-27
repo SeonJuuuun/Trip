@@ -43,7 +43,7 @@ let index = {
             email: $("#email").val(),
             nickname: $("#nickname").val(),
             gender: $("#gender").val(),
-            date: $("#date").val()
+            date: $("#date").val(),
             type: $("#type").val()
         }
 
@@ -142,7 +142,6 @@ let index = {
         } else {
             $("#btn-save").prop("disabled", true); // 회원가입 버튼 비활성화
         }
-    },
+    }
 }
 index.init();
-
