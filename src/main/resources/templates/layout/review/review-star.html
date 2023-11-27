@@ -2,7 +2,7 @@
 <html lang="en">
 <head th:replace="layout/header :: head ('별점 및 후기')"></head>
 <body class="text-center d-flex flex-column h-100">
-별점 및 리뷰 작성 예시
+<span th:text="'별점과 리뷰 작성하기 (' + ${user.nickname} + ')님'"></span>
 
 <div class="starpoint_wrap">
     <div class="starpoint_box">
@@ -12,35 +12,40 @@
         <label for="starpoint_4" class="label_star" title="2"><span class="blind">2점</span></label>
         <label for="starpoint_5" class="label_star" title="2.5"><span class="blind">2.5점</span></label>
         <label for="starpoint_6" class="label_star" title="3"><span class="blind">3점</span></label>
-        <label for="st햐arpoint_7" class="label_star" title="3.5"><span class="blind">3.5점</span></label>
+        <label for="starpoint_7" class="label_star" title="3.5"><span class="blind">3.5점</span></label>
         <label for="starpoint_8" class="label_star" title="4"><span class="blind">4점</span></label>
         <label for="starpoint_9" class="label_star" title="4.5"><span class="blind">4.5점</span></label>
         <label for="starpoint_10" class="label_star" title="5"><span class="blind">5점</span></label>
-        <input type="radio" name="starpoint" id="starpoint_1" class="star_radio">
-        <input type="radio" name="starpoint" id="starpoint_2" class="star_radio">
-        <input type="radio" name="starpoint" id="starpoint_3" class="star_radio">
-        <input type="radio" name="starpoint" id="starpoint_4" class="star_radio">
-        <input type="radio" name="starpoint" id="starpoint_5" class="star_radio">
-        <input type="radio" name="starpoint" id="starpoint_6" class="star_radio">
-        <input type="radio" name="starpoint" id="starpoint_7" class="star_radio">
-        <input type="radio" name="starpoint" id="starpoint_8" class="star_radio">
-        <input type="radio" name="starpoint" id="starpoint_9" class="star_radio">
-        <input type="radio" name="starpoint" id="starpoint_10" class="star_radio">
+        <input type="radio" name="starpoint" id="starpoint_1" class="star_radio" data-title="0.5">
+        <input type="radio" name="starpoint" id="starpoint_2" class="star_radio" data-title="1">
+        <input type="radio" name="starpoint" id="starpoint_3" class="star_radio" data-title="1.5">
+        <input type="radio" name="starpoint" id="starpoint_4" class="star_radio" data-title="2">
+        <input type="radio" name="starpoint" id="starpoint_5" class="star_radio" data-title="2.5">
+        <input type="radio" name="starpoint" id="starpoint_6" class="star_radio" data-title="3">
+        <input type="radio" name="starpoint" id="starpoint_7" class="star_radio" data-title="3.5">
+        <input type="radio" name="starpoint" id="starpoint_8" class="star_radio" data-title="4">
+        <input type="radio" name="starpoint" id="starpoint_9" class="star_radio" data-title="4.5">
+        <input type="radio" name="starpoint" id="starpoint_10" class="star_radio" data-title="5">
         <span class="starpoint_bg"></span>
     </div>
 </div>
 
 
-<textarea class="star_box" placeholder="리뷰 내용을 작성해주세요." ></textarea>
-<input type="submit" class="btn02" value="리뷰 등록"/>
-
-
+<textarea id="reviewContent" class="star_box" placeholder="리뷰 내용을 작성해주세요."></textarea>
+<input id="star-save" type="submit" class="btn02" value="리뷰 등록"/>
+<script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+<script>
+    $(document).ready(function () {
+        $('.starpoint_box input.star_radio').on('change', function () {
+            var selectedStar = $('input.star_radio:checked').data('title');
+            console.log(selectedStar);
+        });
+    });
+</script>
+<script th:src="@{/js/star.js}"></script>
+<script th:inline="javascript">
+    var userId = /*[[${user.id}]]*/ null;
+    starIndex.init(userId);
+</script>
 </body>
 </html>
-
-<script>
-  $('.star_rating > .star').click(function() {
-    $(this).parent().children('span').removeClass('on');
-    $(this).addClass('on').prevAll('span').addClass('on');
-  })
-</script>

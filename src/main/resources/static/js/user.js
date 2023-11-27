@@ -43,7 +43,7 @@ let index = {
             email: $("#email").val(),
             nickname: $("#nickname").val(),
             gender: $("#gender").val(),
-            date: $("#date").val()
+            date: $("#date").val(),
             type: $("#type").val()
         }
 

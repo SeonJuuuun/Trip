@@ -8,6 +8,9 @@
 <div class="container">
     <div class="text-center mb-4">
         <h2>동행 내역</h2>
+        <button>
+            <a th:href="@{/review/star/{id}(id=${id})}" class="btn btn-dark mt-3">별점 달기</a>
+        </button>
     </div>
     <table class="table">
         <thead class="thead-light">

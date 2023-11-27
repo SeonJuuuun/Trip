@@ -21,6 +21,7 @@ public class RealAccompanyController {
 
         // 모델에 데이터 추가
         model.addAttribute("userAccompanyHistory", userAccompanyHistory);
+        model.addAttribute("id", id);
 
         // 해당하는 Thymeleaf 템플릿을 사용하는 HTML 페이지 반환
         return "layout/realAccompany/user-history";
